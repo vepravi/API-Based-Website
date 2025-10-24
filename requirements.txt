@@ -1,0 +1,5 @@
+opencv-python-headless==4.12.0.88
+qrcode==8.2
+flask==2.3.2
+Bootstrap-Flask==2.2.0
+gunicorn==23.0.0
