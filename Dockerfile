@@ -20,6 +20,12 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     --mount=type=bind,source=requirements.txt,target=requirements.txt \
     python -m pip install -r requirements.txt
 
+# Create the uploads directory where files will be stored
+RUN mkdir -p /app/uploads
+
+# Set the ownership of the uploads directory to the non-privileged user
+RUN chown -R appuser:appuser /app/uploads
+
 USER appuser
 
 COPY . .
